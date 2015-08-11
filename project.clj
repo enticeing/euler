@@ -3,4 +3,5 @@
   :url "http://github.com/enticeing/euler"
   :license {:name "FreeBSD license"
             :url "http://www.freebsd.org/copyright/freebsd-license.html"}
-  :dependencies [[org.clojure/clojure "1.6.0"]])
+  :dependencies [[org.clojure/clojure "1.6.0"]
+                 [org.clojure/math.numeric-tower "0.0.4"]])

@@ -22,6 +22,26 @@
    [20 73 35 29 78 31 90 1 74 31 49 71 48 86 81 16 23 57 5 54]
    [1 70 54 71 83 51 54 69 16 92 33 48 61 43 52 1 89 19 67 48]])
 
+(defn groups-of-four  
+  [coll]
+  "Gets groups of four elements from the collection from
+   the beginning.
+     [1 2 3 4 5 6] -> [[1 2 3 4] [2 3 4 5] [3 4 5 6]]"
+  (if (< (count coll) 4)
+    nil
+    (cons (vec (take 4 coll))
+          (lazy-seq (fours (rest coll))))))
+
+(defn max-product
+  "Get the max product of the groups of 4 of a vector"
+  [vec]
+  (->> (seq (groups-of-four  nums))
+       (map (fn [x] (apply * x)))
+       (reduce max)))
+
 (defn -main
+  ;; Get the vertical sums of the grid and it's transpose
+  (map max
+       (map
   (println "Hello world!"))
   
